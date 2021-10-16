@@ -48,14 +48,6 @@ input[type=radio] {
   flex-wrap: wrap;
 }
 
-.text {
-  display: none;
-  color: white;
-  font-size: 1.5rem;
-  transition: all 1s linear;
-}
-
-
 .bullets {
   display: flex;
   gap: 1.5rem;
@@ -75,10 +67,10 @@ input[type=radio] {
 
 .slider-bullet span{
   display: block;
-  width: 3rem;
+  width: 2rem;
   height: 4rem;
   margin-top:-1rem;
-  margin-left:-1rem;
+  margin-left:-0.4rem;
 }
 
 #slide1:checked ~ .slider-control > .bullets > li:nth-of-type(1) > label,
@@ -106,18 +98,33 @@ input[type=radio] {
   transform: translateX(-300%);
 }
 
-#slide1:checked ~ .slider-control > .text1 {
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.text {
+  display: none;
+  color: white;
+  font-size: 1.5rem;
+  align-self: self-start;
+  animation-name: fadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1s;
+}
+
+#slide1:checked ~ .slider-control > .text1,
+#slide2:checked ~ .slider-control > .text2,
+#slide3:checked ~ .slider-control > .text3,
+#slide4:checked ~ .slider-control > .text4
+{
   display: inline;
 }
-#slide2:checked ~ .slider-control > .text2 {
-  display: inline;
-}
-#slide3:checked ~ .slider-control > .text3 {
-  display: inline;
-}
-#slide4:checked ~ .slider-control > .text4 {
-  display: inline;
-}
+
 
 @media (max-width: 640px) {
   html {
