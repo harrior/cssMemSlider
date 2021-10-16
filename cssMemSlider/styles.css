@@ -7,6 +7,11 @@
 :root {
   --bg-color: #25282a;
   --bullet-size: 1rem;
+  --bullet-color: #71abff;
+  --bullet-checked-color: white;
+  --bullet-active-color: #c8c8c8;
+  --text-color: white;
+  --text-size: 1.5rem;
 }
 
 body {
@@ -67,9 +72,19 @@ input[type=radio] {
   width: var(--bullet-size);
   height: var(--bullet-size);
   border-radius: 50%;
-  border: 0.1rem #71abff solid;
-  background-color: #71abff;
+  border: 0.1rem var(--bullet-color) solid;
+  background-color: var(--bullet-color);
   cursor: pointer;
+}
+
+.bullet:hover {
+  border-color: var(--bullet-checked-color);
+  background-color: var(--bullet-checked-color);
+}
+
+.bullet:active {
+  border-color: var(--bullet-active-color);
+  background-color: var(--bullet-active-color);
 }
 
 .bullet-area{
@@ -87,11 +102,6 @@ input[type=radio] {
 #slide4:checked ~ .controls > .bullets > li:nth-of-type(4) > label,
 #slide5:checked ~ .controls > .bullets > li:nth-of-type(5) > label {
   background-color: var(--bg-color);
-}
-
-.bullet:hover {
-  border-color: white;
-  background-color: white;
 }
 
 #slide1:checked ~ .slider-container > .slider-slides {
@@ -122,8 +132,8 @@ input[type=radio] {
 
 .text {
   display: none;
-  color: white;
-  font-size: 1.5rem;
+  color: var(--text-color);
+  font-size: var(--text-size);
   align-self: self-start;
   animation-name: fadeInOut;
   animation-timing-function: ease-in-out;
