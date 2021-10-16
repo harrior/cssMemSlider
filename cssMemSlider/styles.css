@@ -10,7 +10,7 @@ body {
 .container {
   display: flex;
   flex-direction: row;
-  padding: 2rem;
+  padding: 2.5% 5%;
   gap: 1.5rem;
   flex-wrap: wrap;
 }
@@ -69,6 +69,7 @@ input[type=radio] {
   height: 1.5rem;
   border-radius: 50%;
   border: 0.1rem #71abff solid;
+  background-color: #71abff;
   cursor: pointer;
 }
 
@@ -80,33 +81,14 @@ input[type=radio] {
   margin-left:-1rem;
 }
 
-/*.slider-bullet:after {*/
-/*  position:absolute;*/
-/*  background-color: red;*/
-/*  content:'';*/
-/*  */
-/*  top:-10px; bottom:-10px;*/
-/*  left:-10px; right:-10px;*/
-/*}*/
-
-.slider-bullet:hover {
-  border: 0.2rem white solid;
-}
-
-
-.slider-checked {
-  background-color: #71abff;
-}
-
-.slider-checked:hover {
-  border: 0.2rem white solid;
-  background-color: white;
-}
-
 #slide1:checked ~ .slider-control > .bullets > li:nth-of-type(1) > label,
 #slide2:checked ~ .slider-control > .bullets > li:nth-of-type(2) > label,
 #slide3:checked ~ .slider-control > .bullets > li:nth-of-type(3) > label,
 #slide4:checked ~ .slider-control > .bullets > li:nth-of-type(4) > label {
+  background-color: #25282a;
+}
+
+.slider-bullet:hover {
   border-color: white;
   background-color: white;
 }
