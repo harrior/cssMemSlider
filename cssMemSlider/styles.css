@@ -11,7 +11,7 @@ body {
   display: flex;
   flex-direction: row;
   padding: 2rem;
-  gap: 3rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
 }
 
@@ -54,13 +54,11 @@ input[type=radio] {
   font-size: 1.5rem;
   transition: all 1s linear;
 }
-/*.text:after{*/
-/*  transition: all 3s linear;*/
-/*}*/
+
 
 .bullets {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   list-style: none;
 }
 
@@ -70,7 +68,7 @@ input[type=radio] {
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
-  border: 0.2rem #71abff solid;
+  border: 0.1rem #71abff solid;
   cursor: pointer;
 }
 
@@ -139,13 +137,17 @@ input[type=radio] {
   display: inline;
 }
 
-/*#slide2:checked ~ .slider-control > .text:after {*/
-/*  content: 'Learn TS!';*/
-/*}*/
-/*#slide3:checked ~ .slider-control > .text:after {*/
-/*  content: 'Kek!';*/
-/*}*/
-/*#slide4:checked ~ .slider-control > .text:after {*/
-/*  content: 'Wow!';*/
-/*}*/
+@media (max-width: 640px) {
+  html {
+    font-size: 3vw;
+  }
 
+  .bullets {
+    order: -1;
+  }
+
+  .slider-control {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
